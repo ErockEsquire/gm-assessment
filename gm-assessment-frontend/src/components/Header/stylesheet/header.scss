@@ -1,0 +1,11 @@
+.header {
+  background-color: #363636;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .header__logo {
+    max-height: 4rem;
+    margin: 0 auto;
+  }
+}
