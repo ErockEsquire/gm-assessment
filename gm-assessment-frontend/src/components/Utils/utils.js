@@ -33,10 +33,14 @@ export const calculateTimesheets = (timesheets) => {
   projectBillableAmount = projectBillableAmount.toFixed(2);
 
   return {
-    totalHours: prettierNumber(projectHours),
-    totalBillableHours: prettierNumber(projectBillableHours),
-    totalBillableAmount: prettierNumber(projectBillableAmount),
+    totalHours: projectHours,
+    totalBillableHours: projectBillableHours,
+    totalBillableAmount: projectBillableAmount,
   };
+};
+
+export const calculatePercent = (total, portion) => {
+  return Math.floor((portion / total) * 100);
 };
 
 export const prettierNumber = (number) => {

@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :timesheets
+      resources :projects
+      resources :clients
+
+      root to: "timesheets#index"
+    end
   resources :clients, only: [:index]
   resources :projects, only: [:index]
   resources :timesheets, only: [:index]

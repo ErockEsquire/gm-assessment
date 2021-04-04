@@ -1,39 +1,46 @@
 .project {
-  .project-numberBox {
+  padding: 0 3rem;
+  .project__numberBox {
     display: flex;
     justify-content: space-between;
     max-width: 860px;
     margin: 0 auto;
     position: relative;
     z-index: 9;
-    .project-numberBox__div {
-      margin: 1rem;
+    color: rgb(63, 63, 63);
+    .project__numberBox__div {
+      margin: 1.5rem 1rem;
       text-align: center;
       padding: 0 1rem;
       min-width: 12rem;
+      font-size: 1.1rem;
+      p:first-child {
+        margin: 1rem 0;
+      }
+      p:nth-child(2) {
+        margin: 0;
+        font-size: 1.25rem;
+        font-family: "Source Sans Pro";
+      }
+      span {
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
     }
-    .project-numberBox__div:first-child {
-      background-color: #87eb95;
-    }
-    .project-numberBox__div:nth-child(2) {
-      background-color: #87cfeb;
-    }
-    .project-numberBox__div:last-child {
-      background-color: #f1df90;
-    }
-  }
-
-  .project-tableBox {
-    
   }
 }
 
-.project-projectsContainer {
+.project__projectsContainer {
   display: flex;
   justify-content: center;
   position: relative;
+  overflow-y: hidden;
+  overflow-x: auto;
   .table-row__head {
     cursor: pointer;
+  }
+  .right {
+    text-align: right;
   }
   .project-row {
     background-color: rgb(240, 240, 240);
@@ -42,6 +49,15 @@
     td {
       cursor: pointer;
     }
+  }
+  tr.project-row.opened {
+    background-color: #b278c8;
+    color: white;
+  }
+  tr.project-row:hover {
+    transition: 400ms ease-in-out;
+    background-color: #b278c8;
+    color: white;
   }
 }
 
@@ -60,7 +76,7 @@ th {
 }
 thead {
   color: white;
-  background-color: #363636;
+  background: linear-gradient(0deg, rgba(54,54,54,1) 0%, rgba(109,109,117,1) 100%); 
   position: relative;
   z-index: 9;
   tr {
@@ -76,27 +92,44 @@ td {
 }
 
 .project-row__hours,
-  .project-row__timesheets-row__hours {
-    text-align: right;
+.project-row__timesheets-row__hours {
+  text-align: right;
+}
+.project-row__timesheets-head {
+  td {
+    z-index: 5;
+    position: relative;
+    background-color: #68c4e9;
+    cursor: pointer;
   }
-  .project-row__timesheets-head {
-    td {
-      z-index: 5;
-      position: relative;
-      background-color: #b278c8;
-      cursor: pointer;
-    }
-    color: white;
-  }
-  .project-row__timesheets-row {
-    background-color: rgb(246, 246, 246);
-    transform: translateY(-100vh);
-    z-index: 0;
-    animation: 1s slideDown forwards;
-  }
+  color: white;
+}
+.project-row__timesheets-row {
+  background-color: rgb(246, 246, 246);
+  transition: 400ms ease-in-out;
+
+  z-index: 0;
+}
+.open {
+  transform: translateY(-100vh);
+  animation: 1s forwards slideDown;
+}
+.close {
+  transition: 400ms ease-in-out;
+  animation: 2s ease-in-out forwards slideUp;
+}
 
 @keyframes slideDown {
-  100% {transform: translateY(0)}
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  100% {
+    height: 0;
+    transform: translateY(-200vh);
+  }
 }
 
 .table-row__head {
@@ -117,7 +150,7 @@ td {
 @media only screen and (max-width: 860px) {
   .project {
     .project-numberBox {
-      padding: 0 0;
+      flex-direction: column;
     }
   }
 }

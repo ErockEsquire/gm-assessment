@@ -18,18 +18,18 @@ export default function Projects({ projects }) {
 
   return (
     <section className="project">
-      <div className="project-numberBox">
-        <div className="project-numberBox__div">
-          <p>Total Hours</p>
+      <div className="project__numberBox">
+        <div className="project__numberBox__div">
+          <p><strong>Hours Tracked</strong></p>
           <p>{hours}</p>
         </div>
-        <div className="project-numberBox__div">
-          <p>Total Billable Hours</p>
+        <div className="project__numberBox__div">
+          <p><strong>Total Billable Hours</strong></p>
           <p>{billableHours}</p>
         </div>
-        <div className="project-numberBox__div">
-          <p>Total Billable Amount</p>
-          <p>$ {billableAmount}</p>
+        <div className="project__numberBox__div">
+          <p><strong>Billable Amount</strong></p>
+          <p><span>$</span> {billableAmount}</p>
         </div>
       </div>
       <Table

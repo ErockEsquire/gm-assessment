@@ -1,0 +1,92 @@
+.welcome {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgb(68, 68, 68);
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome__playground {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+  animation: 1s 1.5s forwards rotate;
+  .welcome__playground__div {
+    right: 5rem;
+    position: absolute;
+  }
+
+  .welcome__playground__block {
+    position: absolute;
+  }
+}
+.pink {
+  background-color: #e83e9f;
+  width: 0;
+  height: 2.5rem;
+  z-index: 5;
+  left: 2.5rem;
+  animation: 0.5s forwards emergeBlock-horizontal;
+}
+.blue {
+  background-color: #0080ca;
+  width: 0;
+  height: 2.5rem;
+  z-index: 4;
+  left: 5rem;
+  animation: 0.5s 0.5s forwards emergeBlock-horizontal;
+}
+.yellow {
+  background-color: #fecb04;
+  width: 2.5rem;
+  height: 0rem;
+  z-index: 3;
+  left: 5rem;
+  bottom: 0;
+  animation: 0.5s 1s forwards emergeBlock-vertical-yellow;
+}
+.yellow-top {
+  width: 0;
+  height: 0;
+  right: 0;
+  left: 2.5rem;
+  bottom: 0;
+  z-index: 3;
+  visibility: hidden;
+  border-top: 2.5rem solid #fecb04;
+  border-left: 2.5rem solid #e83e9f;
+  border-right: 2.5rem solid transparent;
+  animation: 0.5s 1.5s forwards emerge-yellow-top;
+}
+
+@keyframes emergeBlock-horizontal {
+  100% {
+    width: 2.5rem;
+  }
+}
+@keyframes emergeBlock-vertical-yellow {
+  50% {
+    height: 2.5rem;
+  }
+  99% { background-color: #fecb04;}
+  100% {
+    background-color: #0db15d;
+    height: 2.5rem;
+  }
+}
+@keyframes rotate {
+  100% {
+    transform-origin: center;
+    transform: rotate(720deg);
+  }
+}
+@keyframes emerge-yellow-top {
+  100% { visibility: visible;}
+}
+
+

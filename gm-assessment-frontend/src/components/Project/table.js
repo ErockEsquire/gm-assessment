@@ -8,7 +8,7 @@ import {
   sortBillableAmount,
 } from "../Utils/utils";
 
-export default function Table({ projects, openTimesheets, handleOpenTimesheets }) {
+export default function Table({ projects, handleOpenTimesheets }) {
   const [projectsRender, setProjectsRender] = useState(projects);
   const [currentSort, setCurrentSort] = useState("client");
   const [name, setName] = useState("");
@@ -78,15 +78,15 @@ export default function Table({ projects, openTimesheets, handleOpenTimesheets }
   };
 
   return (
-    <div className={openTimesheets ? "project-projectsContainer left":"project-projectsContainer center"}>
-      <table className="project-projectsContainer__table">
-        <thead className="project-projectsContainer__table__head">
+    <div className="project__projectsContainer">
+      <table className="project__projectsContainer__table">
+        <thead className="project__projectsContainer__table__head">
           <tr>
             <th
               className="table-row__head"
               onClick={() => sortController("name")}
             >
-              Project
+              Name
             </th>
             <th
               className="table-row__head"
@@ -95,19 +95,19 @@ export default function Table({ projects, openTimesheets, handleOpenTimesheets }
               Client
             </th>
             <th
-              className="table-row__head"
+              className="table-row__head right"
               onClick={() => sortController("hours")}
             >
               Hours
             </th>
             <th
-              className="table-row__head"
+              className="table-row__head right"
               onClick={() => sortController("billableHours")}
             >
               Billable Hours
             </th>
             <th
-              className="table-row__head"
+              className="table-row__head right"
               onClick={() => sortController("billableAmount")}
             >
               Billable Amount

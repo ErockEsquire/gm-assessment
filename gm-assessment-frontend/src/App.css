@@ -1,4 +1,5 @@
 .App {
-  padding-bottom: 5rem;
-  scroll-behavior: auto;
+  padding-bottom: 3rem;
+  scroll-behavior: smooth;
+  font-family: "Montserrat";
 }
