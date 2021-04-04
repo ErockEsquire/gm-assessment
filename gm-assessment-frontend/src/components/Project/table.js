@@ -31,6 +31,7 @@ export default function Table({ projects, handleOpenTimesheets }) {
     ));
   };
 
+  //A very robust sorting controller to direct which column to sort and in which direction.
   const sortController = (column) => {
     setCurrentSort(column);
     if (column === "name") {
@@ -58,6 +59,7 @@ export default function Table({ projects, handleOpenTimesheets }) {
     }
   };
 
+  //runs the sort function to sort the column in the proper direction, then sets the state to render the result.
   const handleSortColumn = (
     column,
     direction,

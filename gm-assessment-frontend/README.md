@@ -4,7 +4,7 @@ This Frontend is built with Create-React-App
 ## Start in Local
 Please run these commands in order!
 `npm install` to install dependencies.
-`rails s` to start backend server on localhost:3000.
+`rails s` to start backend server on localhost:3000 if not already done.
 `npm start` to start frontend on localhost:3001.
 
 ## Process

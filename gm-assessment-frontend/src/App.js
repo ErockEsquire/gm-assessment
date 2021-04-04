@@ -9,10 +9,13 @@ function App() {
   const [projects, setProjects] = useState([])
   const [welcome, setWelcome] = useState(true);
   const url = "http://localhost:3000/";
+
+  //useEffect to remove welcome element
   useEffect(() => {
     setTimeout(() => setWelcome(false), 3000);
   })
 
+  //fetch data from projects route
   useEffect(() => {
     const fetchData = async () => {
       const projectsResponse = await axios.get(url + "projects")
@@ -20,7 +23,6 @@ function App() {
     };
     fetchData();
   }, []);
-
 
   return (
     <div className="App">
@@ -30,7 +32,5 @@ function App() {
     </div>
   );
 }
-
-
 
 export default App;

@@ -13,6 +13,8 @@ Please run these commands in order!
 /projects
 /timesheets?page=#
 
+Timesheets route includes pagination.
+
 ## Process
 I chose Ruby on Rails as my backend because I've had experience using Rails to ingest CSV data into tables. The process was straightforward, so I aimed to follow the same steps.
 
@@ -21,7 +23,7 @@ In most spreadsheets, there are a number of relations hidden between the lines, 
 Another potential table would've been the employees, but since only their first name and last names were available, I thought this table would be unnecessary for this exercise.
 
 ## CSV Ingestion
-One of the most expensive processes with backend are database actions. So in my seeds.rb file, much of the logic is based on making as few database calls as possible.
+One of the most expensive processes with backend are database actions. So in my seeds.rb file, much of the logic is based on making as few database calls as possible, while importing all data idempotently.
 
 One of the ways I've found to be effective is using upsert_all, which is a new method for Ruby on Rails to create or update a batch of possible entries. If you have an array of hashes matching a table's fields, it can be upserted. 
 

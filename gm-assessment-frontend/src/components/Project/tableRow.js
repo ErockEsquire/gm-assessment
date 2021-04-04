@@ -11,6 +11,7 @@ export default function TableRow({ project }) {
     totals.totalBillableHours
   );
 
+  //a helper specifically meant to calmly unmount the timesheets
   const handleOpen = () => {
     if (openRow) {
       window.scrollTo({ top: 0, behavior: "smooth" });

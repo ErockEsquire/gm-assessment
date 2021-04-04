@@ -8,6 +8,7 @@ export default function Projects({ projects }) {
   const [billableHours, setBillableHours] = useState("");
   const [billableAmount, setBillableAmount] = useState("");
 
+  //uses data from GET response to calculate totals using helper functions. This is what is rendered just below the header and above the table.
   useEffect(() => {
     const totals = calculateTotals(projects);
     setHours(totals.totalHours);
