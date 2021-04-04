@@ -24,7 +24,7 @@ export default function Projects({ projects }) {
           <p>{hours}</p>
         </div>
         <div className="project__numberBox__div">
-          <p><strong>Total Billable Hours</strong></p>
+          <p><strong>Billable Hours</strong></p>
           <p>{billableHours}</p>
         </div>
         <div className="project__numberBox__div">

@@ -1,5 +1,15 @@
 require 'csv'
 
+#The CSV ingestion functions rely on upsert_all to batch create or update entries for the tables. This dramatically lessens database calls which are very expensive.
+
+#The basic gist of the logic is to pull data into arrays one table at a time, starting with the data for tables that do not require relations. 
+
+#In this case, Clients are first since they do not rely on any relations. All client names from the csv column are pulled, filtered for unique names, and inserted into the Clients table.
+
+#Then, Projects which belongs to Clients, finds the appropriate Client ID and is inserted.
+
+#Finally, Timesheets, which belong to both Project and Client, finds the appropriate IDs of both, and are inserted last.
+
 def ingestCSV
   file = File.read(Rails.root.join('lib', 'assets', 'csv', 'GM_Coding_Exercise_Sample_Data.csv'))
   fileHash = CSV.parse(file, headers: true).map(&:to_h)
@@ -15,7 +25,6 @@ def ingestCSV
   inserts = []
   updates = []
   project_inserts = []
-  # update_project_clients = []
 
   fileHash.each do |row|
     if row['Date']
@@ -24,9 +33,6 @@ def ingestCSV
 
       project = projects.find{|project| (project.name == row['Project']) && (project.code == row['Project Code'])}
       client = clients.find{|client| client.name == row['Client']}
-
-      # associated_project_client = associate_project_client(project, client, update_project_clients)
-      # update_project_clients.push(associated_project_client) if associated_project_client
 
       timesheet = timesheets.find{|t| (t.date == date) && (t.project_id == project.id) && (t.first_name == row['First Name']) && (t.last_name == row['Last Name']) && (t.hours == hours)}
 

@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# GM FRONTEND
+This Frontend is built with Create-React-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Start in Local
+Please run these commands in order!
+`npm install` to install dependencies.
+`rails s` to start backend server on localhost:3000.
+`npm start` to start frontend on localhost:3001.
 
-## Available Scripts
+## Process
+React is my go-to for frontend purely because it is one I've had most experience with. And once there is a reliable backend, a lot of the stresses of frontend are pivoted to properly structuring the React application.
 
-In the project directory, you can run:
+I figured a `<table>` would be the easiest way to display the project data, so I put one together to spec, then looked for ways to make it interactive.
 
-### `yarn start`
+I wasn't sure if I was supposed to display the timesheets, but when I first saw the data and read the technical assessment description, I had a vision of clicking a project row, and having the relevant timesheets expand below.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+That's why I serialized the Projects route to include all the relevant Timesheets.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Structure
+Structure of React App is always the main concern whenever I'm building. Most things need to be in a proper place, and things related have to be properly interconnected for states and props. For this small project, redux definitely wouldn't be necessary, so proper structuring was important.
 
-### `yarn test`
+I divided App into two sections - the header and project section. Then, project is divided into two sections - the totals numbers section and the table. The table is put together by a table row component, which includes the timesheets.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
+Every project column can be sorted from the header row. By default, every column sorts by descending first, then ascending, then no sort. Since the data is not expected to change, and the number of projects is few, I decided to keep the sorting logic on the frontend, reducing unnecessary calls to the backend.
 
-### `yarn build`
+Clicking a project row will open expand a section including all the timesheets available to that project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Design
+I understand the assessment requested to try to match the styling, but I thought I would add some flair to it? Otherwise, the entire frontend seemed rather barebones. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+So to make things more visually appealing, I tried to match Giant Machines color palette, added a simple animation utilizing transform: translateX for timesheets, and also mimicked Giant Machines website loader animation.

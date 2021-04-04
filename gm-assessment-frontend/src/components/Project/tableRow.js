@@ -50,9 +50,9 @@ export default function TableRow({ project }) {
           >
             <td>Date</td>
             <td>Name</td>
-            <td>Hours</td>
-            <td>Billable</td>
-            <td>Billable Rate</td>
+            <td className="right">Hours</td>
+            <td className="right">Billable</td>
+            <td className="right">Billable Rate</td>
           </tr>
           {timesheets.map((timesheet) => (
             <tr
