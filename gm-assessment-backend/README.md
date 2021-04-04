@@ -9,6 +9,10 @@ Please run these commands in order!
 `rails db:seed` to ingest CSV spreadsheet.
 `rails s` to start local server on localhost:3000
 
+## GET Routes
+/projects
+/timesheets?page=#
+
 ## Process
 I chose Ruby on Rails as my backend because I've had experience using Rails to ingest CSV data into tables. The process was straightforward, so I aimed to follow the same steps.
 
