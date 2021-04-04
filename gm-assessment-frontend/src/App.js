@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header/header";
-import Timesheet from "./components/Timesheet/timesheet";
+import Projects from "./components/Project/project"
 import axios from "axios";
 
 function App() {
-  const [timesheets, setTimesheets] = useState(null);
-  const [page, setPage] = useState(1);
+  const [projects, setProjects] = useState([])
 
-  const url = "http://localhost:3000/timesheets";
+  const url = "http://localhost:3000/";
   useEffect(() => {
-    const fetchTimesheets = async () => {
-      const response = await axios.get(url + "?page" + page);
-      setTimesheets(response.data.timesheets);
+    const fetchData = async () => {
+      const projectsResponse = await axios.get(url + "projects")
+      setProjects(projectsResponse.data)
     };
-    fetchTimesheets();
+    fetchData();
   }, []);
-  console.log(timesheets);
+  console.log(projects)
 
   return (
     <div className="App">
       <Header />
-      <Timesheet timesheets={timesheets}/>
+      <Projects projects={projects}/>
     </div>
   );
 }
