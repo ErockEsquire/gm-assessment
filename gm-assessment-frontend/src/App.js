@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Welcome from "./components/Welcome/welcome"
-import Header from "./components/Header/header";
-import Projects from "./components/Project/projects"
+import Header from "./components/Header/Header";
+import Projects from "./components/Project/Projects"
 import axios from "axios";
 
 function App() {

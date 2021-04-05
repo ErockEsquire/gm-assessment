@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./stylesheet/project.scss";
-import Table from "./table";
-import { calculateTotals } from "../Utils/utils"
+import Table from "./Table";
+import { calculateTotals } from "../Utils/Utils"
 
 export default function Projects({ projects }) {
   const [hours, setHours] = useState("");

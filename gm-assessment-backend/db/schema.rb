@@ -10,33 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_03_181113) do
-
-  create_table "clients", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+ActiveRecord::Schema.define(version: 20_210_403_181_113) do
+  create_table 'clients', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string "name"
-    t.string "code"
-    t.integer "client_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'projects', force: :cascade do |t|
+    t.string 'name'
+    t.string 'code'
+    t.integer 'client_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "timesheets", force: :cascade do |t|
-    t.float "hours"
-    t.boolean "billable"
-    t.integer "billable_rate"
-    t.date "date"
-    t.string "first_name"
-    t.string "last_name"
-    t.integer "client_id"
-    t.integer "project_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'timesheets', force: :cascade do |t|
+    t.float 'hours'
+    t.boolean 'billable'
+    t.integer 'billable_rate'
+    t.date 'date'
+    t.string 'first_name'
+    t.string 'last_name'
+    t.integer 'client_id'
+    t.integer 'project_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
-
 end

@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class ClientDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -13,7 +13,7 @@ class ClientDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,30 +22,30 @@ class ClientDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  id
-  name
-  timesheets
-  projects
+    id
+    name
+    timesheets
+    projects
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  id
-  name
-  projects
-  timesheets
-  created_at
-  updated_at
+    id
+    name
+    projects
+    timesheets
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  timesheets
-  projects
-  name
+    timesheets
+    projects
+    name
   ].freeze
 
   # COLLECTION_FILTERS
@@ -64,6 +64,6 @@ class ClientDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(client)
-    "#{client.name}"
+    client.name.to_s
   end
 end

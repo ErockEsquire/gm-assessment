@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import TableRow from "./tableRow";
+import TableRow from "./TableRow";
 import {
   sortName,
   sortClient,
   sortHours,
   sortBillableHours,
   sortBillableAmount,
-} from "../Utils/utils";
+} from "../Utils/Utils";
 
 export default function Table({ projects, handleOpenTimesheets }) {
   const [projectsRender, setProjectsRender] = useState(projects);
@@ -81,7 +81,7 @@ export default function Table({ projects, handleOpenTimesheets }) {
 
   return (
     <div className="project__projectsContainer">
-      <table className="project__projectsContainer__table">
+      <table className="project__projectsContainer__table" cellSpacing="0">
         <thead className="project__projectsContainer__table__head">
           <tr>
             <th

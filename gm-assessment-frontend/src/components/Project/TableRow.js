@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { calculateTimesheets, calculatePercent, prettierNumber } from "../Utils/utils";
+import { calculateTimesheets, calculatePercent, prettierNumber } from "../Utils/Utils";
 
 export default function TableRow({ project }) {
   const { name, client, timesheets } = project;
