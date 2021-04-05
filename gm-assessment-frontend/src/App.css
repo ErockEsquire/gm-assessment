@@ -1,5 +1,11 @@
 .App {
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
   scroll-behavior: smooth;
   font-family: "Montserrat";
+}
+
+@media only screen and (max-width: 860px) {
+  .App {
+    padding-bottom: 3rem;
+  }
 }

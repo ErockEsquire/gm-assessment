@@ -1,13 +1,13 @@
 .header {
   background-color: #363636;
-  height: 6rem;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 10;
   .header__logo {
-    max-height: 4rem;
+    max-height: 3rem;
     margin: 0 auto;
   }
 }

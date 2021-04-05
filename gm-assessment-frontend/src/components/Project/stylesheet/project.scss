@@ -12,13 +12,13 @@
     z-index: 9;
     color: rgb(63, 63, 63);
     .project__numberBox__div {
-      margin: 1.5rem 1rem;
+      margin: 1rem;
       text-align: center;
       padding: 0 1rem;
       min-width: 12rem;
       font-size: 1.1rem;
       p:first-child {
-        margin: 1rem 0;
+        margin: 0 0 .5rem 0;
       }
       p:nth-child(2) {
         margin: 0;
@@ -60,6 +60,8 @@
     position: relative;
     td {
       cursor: pointer;
+      height: 1.5rem;
+      border-bottom: solid 1px rgb(206, 206, 206);
     }
   }
   tr.project-row.opened {
@@ -81,7 +83,7 @@
 }
 table {
   th {
-    font-family: "Monserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
     text-align: left;
     border-bottom: solid 1px rgb(168, 168, 168);
